@@ -1,198 +1,209 @@
-const default_config = {
+const CONFIG = new Config({
+  crypto: {
+    coin: 'ETH',
+    currency: 'USD',
+    refreshIn: 10
+  },
   overrideStorage: true, // override localStorage with fixed userconfig values
   temperature: {
-    location: "Århus",
-    scale: "C",
+    location: 'Matão, São Paulo',
+    scale: 'C'
   },
   clock: {
-    format: "h:i",
-    iconColor: "#ff7b95",
+    format: 'h:i p',
+    iconColor: '#ff7b95'
   },
   search: {
     engines: {
-      g: ["https://google.com/search?q=", "Google"],
-      i: ["https://ixquick.com/do/search?q=", "Ixquick"],
-      d: ["https://duckduckgo.com/html?q=", "DuckDuckGo"],
-      y: ["https://youtube.com/results?search_query=", "Youtube"],
-      w: ["https://en.wikipedia.org/w/index.php?search=", "Wikipedia"]
+      g: ['https://google.com/search?q=', 'Google'],
+      i: ['https://ixquick.com/do/search?q=', 'Ixquick'],
+      d: ['https://duckduckgo.com/html?q=', 'DuckDuckGo'],
+      y: ['https://youtube.com/results?search_query=', 'Youtube'],
+      w: ['https://en.wikipedia.org/w/index.php?search=', 'Wikipedia']
     }
   },
   keybindings: {
-    "t": "todo-list",
-    "s": "search-bar"
+    "t": 'todo-list',
+    "s": 'search-bar'
   },
   disabled: [],
   openLastVisitedTab: false,
   tabs: [
     {
-      name: "boards",
-      background_url: "src/img/banners/bg-1.gif",
+      name: 'boards',
+      background_url: 'src/img/banners/bg-1.gif',
       categories: [{
-        name: "Daily",
+        name: 'fun',
         links: [
           {
-            url: "https://www.reddit.com/r/hiphopheads/",
-            name: "/r/HipHopHeads"
+            url: 'https://4chan.org/wsg/',
+            name: '/wsg/'
           },
           {
-            name: "/Youtube/",
-            url: "https://www.youtube.com/index?hl=en&persist_gl=1&gl=US",
-            icon: "leaf",
-            icon_color: "#64876d"
+            name: '/out/',
+            url: 'https://4chan.org/out',
+            icon: 'leaf',
+            icon_color: '#64876d'
           },
           {
-            name: "/EB/",
-            url: "http://ekstrabladet.dk/",
-            icon: "book"
+            name: '/lit/',
+            url: 'https://4chan.org/lit/',
+            icon: 'book'
+          },
+          {
+            name: '/v/',
+            url: 'https://4chan.org/v/',
+            icon: 'device-gamepad',
+            icon_color: '#8b647b'
+          },
+          {
+            name: '/p/',
+            url: 'https://4chan.org/p/',
+            icon: 'camera'
           }
         ]
       },
       {
-        name: "School",
+        name: 'Comfy',
         links: [
           {
-            name: "/Campus/",
-            url: "https://campus.aams.dk/login/index.php",
-            icon: "device-gamepad",
-            icon_color: "#8b647b"
+            name: '/lounge/',
+            url: 'https://sushigirl.us/lounge/catalog.html'
           },
           {
-            name: "/OneDrive/",
-            url: "https://aamste-my.sharepoint.com/",
-            icon: "camera"
+            name: '/comfy/',
+            url: 'https://anon.cafe/comfy/catalog.html'
           }
         ]
       },
       {
-        name: "Technology",
+        name: 'Technology',
         links: [
           {
-            name: "/Gizmodo/",
-            url: "http://blog.gizmodo.com/",
+            name: '/g/',
+            url: 'https://4chan.org/g/',
           },
           {
-            name: "/LifeHacker/",
-            url: "http://blog.lifehacker.com/"
+            name: '/Δ/',
+            url: 'https://archive.arisuchan.jp/%CE%94/catalog.html'
           },
           {
-            name: "/Newz/",
-            url: "http://newz.dk/"
+            name: '/λ/',
+            url: 'https://www.lainchan.org/%CE%BB/catalog.html'
           },
           {
-            name: "/Engadget/",
-            url: "http://www.engadget.com/"
+            name: '/sec/',
+            url: 'https://www.lainchan.org/sec/catalog.html'
           },
           {
-            name: "/ComputerWorld/",
-            url: "https://www.computerworld.dk/",
-            icon: "code"
+            name: '/prog/',
+            url: 'https://boards.420chan.org/prog/',
+            icon: 'code'
           }
         ]
       }
       ]
     },
     {
-      name: "music",
-      background_url: "src/img/banners/bg-2.gif",
+      name: 'music',
+      background_url: 'src/img/banners/bg-2.gif',
       categories: [
         {
-          name: "music services",
+          name: 'music services',
           links: [
             {
-              url: "https://soundcloud.com/",
-              icon: "brand-soundcloud",
-              icon_color: "#c57750"
+              url: 'https://soundcloud.com/',
+              icon: 'brand-soundcloud',
+              icon_color: '#c57750'
             },
             {
-              url: "https://youtu.be/",
-              icon: "brand-youtube",
-              icon_color: "#996767"
+              url: 'https://youtu.be/',
+              icon: 'brand-youtube',
+              icon_color: '#996767'
             },
             {
-              url: "https://r-a-d.io/",
-              icon: "radio"
+              url: 'https://r-a-d.io/',
+              icon: 'radio'
             },
           ]
         },
         {
-          name: "music boards",
+          name: 'music boards',
           links: [
             {
-              name: "/music/",
-              url: "https://lainchan.org/music/",
-              icon: "disc"
+              name: '/music/',
+              url: 'https://lainchan.org/music/',
+              icon: 'disc'
             },
             {
-              name: "/mu/",
-              url: "https://boards.4channel.org/mu/",
+              name: '/mu/',
+              url: 'https://boards.4channel.org/mu/',
             }
           ]
         }
       ]
     },
     {
-      name: "tech",
-      background_url: "src/img/banners/bg-3.gif",
+      name: 'tech',
+      background_url: 'src/img/banners/bg-3.gif',
       categories: [
         {
-          name: "subreddits",
+          name: 'subreddits',
           links: [
             {
-              name: "r/startpages/",
-              url: "https://www.reddit.com/r/startpages/"
+              name: 'r/startpages/',
+              url: 'https://www.reddit.com/r/startpages/'
             },
             {
-              name: "r/unixporn",
-              url: "https://www.reddit.com/r/unixporn/"
+              name: 'r/unixporn',
+              url: 'https://www.reddit.com/r/unixporn/'
             },
             {
-              name: "r/mechkbds/",
-              url: "https://www.reddit.com/r/MechanicalKeyboards/",
-              icon: "keyboard",
-              icon_color: "#a57685"
+              name: 'r/mechkbds/',
+              url: 'https://www.reddit.com/r/MechanicalKeyboards/',
+              icon: 'keyboard',
+              icon_color: '#a57685'
             },
             {
-              name: "r/programming",
-              url: "https://www.reddit.com/r/programming/"
+              name: 'r/programming',
+              url: 'https://www.reddit.com/r/programming/'
             }
           ]
         },
         {
-          name: "blogs",
+          name: 'blogs',
           links: [
             {
-              name: "fasterthanli",
-              url: "https://fasterthanli.me/articles",
-              icon: "anchor"
+              name: 'fasterthanli',
+              url: 'https://fasterthanli.me/articles',
+              icon: 'anchor'
             },
             {
-              name: "dev.to",
-              url: "https://dev.to"
+              name: 'dev.to',
+              url: 'https://dev.to'
             },
             {
-              name: "mataroa.blog",
-              url: "https://collection.mataroa.blog",
+              name: 'mataroa.blog',
+              url: 'https://collection.mataroa.blog',
             }
           ]
         },
         {
-          name: "misc",
+          name: 'misc',
           links: [
             {
-              name: "post office",
-              url: "http://afternoon.dynu.com/letterbox.html",
-              icon: "mailbox"
+              name: 'post office',
+              url: 'http://afternoon.dynu.com/letterbox.html',
+              icon: 'mailbox'
             },
             {
-              name: "rust docs",
-              url: "https://doc.rust-lang.org/book/",
-              icon: "notebook",
-              icon_color: "#977a3a"
+              name: 'rust docs',
+              url: 'https://doc.rust-lang.org/book/',
+              icon: 'notebook',
+              icon_color: '#977a3a'
             }
           ]
         }
       ]
     }]
-};
-
-const CONFIG = new Config(default_config);
+});
