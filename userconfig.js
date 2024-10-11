@@ -6,11 +6,11 @@ const CONFIG = new Config({
   },
   overrideStorage: true, // override localStorage with fixed userconfig values
   temperature: {
-    location: 'Matão, São Paulo',
+    location: 'Århus',
     scale: 'C'
   },
   clock: {
-    format: 'h:i p',
+    format: 'h:i',
     iconColor: '#ff7b95'
   },
   search: {
@@ -33,46 +33,38 @@ const CONFIG = new Config({
       name: 'boards',
       background_url: 'src/img/banners/bg-1.gif',
       categories: [{
-        name: 'fun',
+        name: 'Daily',
         links: [
           {
-            url: 'https://4chan.org/wsg/',
-            name: '/wsg/'
+            url: 'https://www.reddit.com/r/hiphopheads/',
+            name: '/r/HipHopHeads'
           },
           {
-            name: '/out/',
-            url: 'https://4chan.org/out',
+            name: '/Youtube/',
+            url: 'https://www.youtube.com/index?hl=en&persist_gl=1&gl=US',
             icon: 'leaf',
             icon_color: '#64876d'
           },
           {
-            name: '/lit/',
-            url: 'https://4chan.org/lit/',
+            name: '/EB/',
+            url: 'http://ekstrabladet.dk/',
             icon: 'book'
-          },
-          {
-            name: '/v/',
-            url: 'https://4chan.org/v/',
-            icon: 'device-gamepad',
-            icon_color: '#8b647b'
-          },
-          {
-            name: '/p/',
-            url: 'https://4chan.org/p/',
-            icon: 'camera'
           }
         ]
       },
       {
-        name: 'Comfy',
+        name: 'School',
         links: [
           {
-            name: '/lounge/',
-            url: 'https://sushigirl.us/lounge/catalog.html'
+            name: '/Campus/',
+            url: 'https://campus.aams.dk/login/index.php',
+            icon: 'device-gamepad',
+            icon_color: '#8b647b'
           },
           {
-            name: '/comfy/',
-            url: 'https://anon.cafe/comfy/catalog.html'
+            name: '/OneDrive/',
+            url: 'https://aamste-my.sharepoint.com/',
+            icon: 'camera'
           }
         ]
       },
@@ -80,24 +72,24 @@ const CONFIG = new Config({
         name: 'Technology',
         links: [
           {
-            name: '/g/',
-            url: 'https://4chan.org/g/',
+            name: '/Gizmodo/',
+            url: 'http://blog.gizmodo.com/',
           },
           {
-            name: '/Δ/',
-            url: 'https://archive.arisuchan.jp/%CE%94/catalog.html'
+            name: '/LifeHacker/',
+            url: 'http://blog.lifehacker.com/'
           },
           {
-            name: '/λ/',
-            url: 'https://www.lainchan.org/%CE%BB/catalog.html'
+            name: '/Newz/',
+            url: 'http://newz.dk/'
           },
           {
-            name: '/sec/',
-            url: 'https://www.lainchan.org/sec/catalog.html'
+            name: '/Engadget/',
+            url: 'http://www.engadget.com/'
           },
           {
-            name: '/prog/',
-            url: 'https://boards.420chan.org/prog/',
+            name: '/ComputerWorld/',
+            url: 'https://www.computerworld.dk/',
             icon: 'code'
           }
         ]
